@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoping</title>
+
+
+    <Link rel="stylesheet" href="index.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+    
+    
+    
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+        <a href="index.html">
+            <img src="./imgs/images.png" class="logonav">
+        </a>
+
+        <div class="nav-profile">
+           <div onclick="openCart()" style="cursor: pointer;" class="nav-profile-cart">
+                <i class="fas fa-cart-shopping"></i>
+                <div id="cartcount" class="cartcount" style="display: none;">
+                    0
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <div class="container">
+        <div class="sidebar">
+            <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="sidebar-search" placeholder="Search something...">
+
+            <a onclick="searchproduct('all')" class="sidebar-items">
+              All product
+            </a>
+            <a onclick="searchproduct('fertilizerbig')" class="sidebar-items">
+              Big
+            </a>
+            <a onclick="searchproduct('herbicide')" class="sidebar-items">
+              Herbicide
+            </a>
+            <a onclick="searchproduct('fertilizersmall')" class="sidebar-items">
+              Small
+            </a>
+         
+
+        </div>
+      
+
+        
+        <div id="productlist" class="product">
+          
+            </div>
+        </div>
+        <div id="modalDesc" class="modal" style="display: none;">
+            <div onclick="closeModal()" class="modal-bg"></div>
+            <div class="modal-page">
+              <h2>Detail</h2>
+              <br>
+              <div class="modaldesc-content">
+                <img id="mdd-img" class="modaldesc-img" src="./imgs/22.jpg" alt="">
+                <div class="modaldesc-detail">
+                  <p id="mdd-name" style="font-size: 1.5vw;">Product name</p>
+                  <p id="mdd-price" style="font-size: 1.2vw;">500 THB</p>
+                  <br>
+                  <p id="mdd-desc" style="color: #adadad;">Lorem iaudantium harum doloremque alias. Quae, vel ipsum quasi, voluptas, sit optio nemo magni numquam non dicta voluptates porro! Vero eveniet numquam sit aut vel eligendi officiis iste tenetur expedita. Delectus vero quibusdam adipisci in. Esse.</p>
+                  <br>
+                  <div class="btn-control">
+                    <button onclick="closeModal()" class="btn">
+                      Close
+                    </button>
+                    <button onclick="addtocart()" class="btn btn-buy">
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="modalCart" class="modal" style="display: none;">
+            <div onclick="closeModal()" class="modal-bg"></div>
+            <div class="modal-page">
+                <h2>PRODUCT SHOP</h2>
+                <br>
+                <div id="mycart" class="cartlist">
+                </div>
+                <div class="btn-control">
+                    <button onclick="closeModal()" class="btn">
+                        Cancel
+                    </button>
+                    <button onclick="buynow()" class="btn btn-buy">
+                        Buy
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        </body>
+
+</html>
